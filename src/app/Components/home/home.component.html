@@ -1,0 +1,109 @@
+
+
+<!-- carousel -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- search section -->
+
+<section class="vh-100 bg-image" style="background-image: url('https://thumbs.dreamstime.com/z/pile-books-magnifying-glass-neutral-background-concept-search-information-105222790.jpg');"
+    class="image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Search Books</h2>
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example1cg"
+                                    placeholder="eg: Biography, Adventure, Fiction etc" [(ngModel)]=book.category
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example1cg">Category</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="Author Name" id="form3Example3cg" [(ngModel)]=book.authorName
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example3cg">Author Name</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="Price" id="form3Example3cg" [(ngModel)]=book.price
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example3cg">Price</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="Publisher" id="form3Example3cg" [(ngModel)]=book.publisher
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example3cg">Publisher</label>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary"
+                                    (click)="searchBooks(book.category,book.authorName,book.price,book.publisher) ">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Search Results -->
+
+<br>
+
+<h2 style="color: brown;">Search Results</h2>
+<div class="row gy-2 my-2">
+    <div class="col-sm-2" *ngFor="let book of books">
+        <div class="card">
+            <img [src]="book.image" width="50" height="160" class="card-img-top" alt="image">
+            <div class="card-bodys">
+                <p class="card-texts">
+                    <label> Book Id: </label>
+                    {{book.id}}
+                </p>
+                <p class="card-texts">
+                    <label> Title: </label>
+                    {{book.title}}
+                </p>
+                <p class="card-texts">
+                    <label> Price: </label>
+                    {{book.price | currency:'INR'}}
+                </p>
+                <p class="card-texts">
+                    <label> Publisher: </label>
+                    {{book.publisher}}
+                </p>
+                <p class="card-texts">
+                    <label> Category: </label>
+                    {{book.category}}
+                </p>
+                <p class="card-texts">
+                    <label> Active: </label>
+                    {{book.active}}
+                </p>
+                <p class="card-texts">
+                    <label> Content: </label>
+                    {{book.content}}
+                </p>
+                <td><button type="button" class="btn btn-dark" (click)="addToCart(book.id)">Add to Cart</button></td>
+               
+            </div>
+        </div>
+    </div>
+</div>

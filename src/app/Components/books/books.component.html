@@ -1,0 +1,87 @@
+<h3>Register a Book</h3>
+<div>
+    
+<a class="nav-link" style="text-align: end;"  routerLink="/authorBooks" href="#">All My Books</a>
+<a class="nav-link" style="text-align: end;" routerLink="" href="#">Log Out</a>
+
+</div>
+
+<div class="input-group">
+    <span class="input-group-text">Title</span>
+    <input type="text"  placeholder="Title of the book" [(ngModel)]=book.title aria-label="First name"
+        class="form-control">
+
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-text">Category</span>
+    <input type="text"  placeholder="eg: Biography, Adventure, Fiction etc" [(ngModel)]=book.category aria-label="First name"
+        class="form-control">
+
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-text">Author Name</span>
+    <input type="text"  placeholder="Please Enter Your Name" [(ngModel)]=book.authorName aria-label="First name"
+        class="form-control">
+
+</div>
+
+<!-- <div class="input-group">
+    <span class="input-group-text">Image</span>
+    <input type="text"  placeholder="please insert url" [(ngModel)]=book.image aria-label="First name"
+        class="form-control">
+
+</div> -->
+<!-- <div class="mb-3">
+    <label for="formFile" class="form-label">Image</label>
+    <input class="form-control" [(ngModel)]=book.image type="file" id="formFile">
+  </div> -->
+  <br>
+  <div class="input-group">
+    <span class="input-group-text">Image</span>
+    <input type="text"   aria-label="Price" [(ngModel)]=book.image
+        class="form-control">
+
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-text">Price</span>
+    <input type="text"   aria-label="Price" [(ngModel)]=book.price
+        class="form-control">
+
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-text">Publisher</span>
+    <input type="text"   aria-label="Publisher name" [(ngModel)]=book.publisher
+        class="form-control">
+
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-text">Active</span>
+    <input type="text"   aria-label="Active" [(ngModel)]=book.active
+        class="form-control">
+
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-text">Content</span>
+    <input type="text"   aria-label="Content" [(ngModel)]=book.content
+        class="form-control">
+
+</div>
+
+<br>
+<div class="input-group">
+    <span class="input-group-text">Email</span>
+    <input type="text"  placeholder="please insert your email id" [(ngModel)]=book.email aria-label="First name"
+        class="form-control">
+    </div>
+
+
+<br>
+<button class="btn btn-primary" (click)="save()">Save</button>
+
+

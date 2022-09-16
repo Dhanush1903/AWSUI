@@ -1,0 +1,41 @@
+
+<div class="row gy-2 my-2">
+    <div class="col-sm-2" >
+        <div class="card">
+            <img [src]="book.image" width="50" height="160" class="card-img-top" alt="image">
+            <div class="card-bodys">
+                <p class="card-texts">
+                    <label> Book Id: </label>
+                    {{book.id}}
+                </p>
+                <p class="card-texts">
+                    <label> Title: </label>
+                    {{book.title}}
+                </p>
+                <p class="card-texts">
+                    <label> Price: </label>
+                    {{book.price | currency:'INR'}}
+                </p>
+                <p class="card-texts">
+                    <label> Publisher: </label>
+                    {{book.publisher}}
+                </p>
+                <p class="card-texts">
+                    <label> Category: </label>
+                    {{book.category}}
+                </p>
+                <p class="card-texts">
+                    <label> Active: </label>
+                    {{book.active}}
+                </p>
+                <p class="card-texts">
+                    <label> Content: </label>
+                    {{book.content}}
+                </p>
+               
+               
+               
+            </div>
+        </div>
+    </div>
+</div>

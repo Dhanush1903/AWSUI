@@ -1,0 +1,81 @@
+<div class="input-group">
+    <span class="input-group-text"></span>
+    <input type="text" placeholder="please Re-Enter your email id" [(ngModel)]=book.email aria-label="First name"
+        class="form-control">
+
+
+    <button class="btn btn-primary" (click)="getByEmail(book.email)">Submit</button>
+</div>
+
+<h2>Your List of Books</h2>
+<!-- <table class="table table-dark table-striped-columns">
+
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>category</th>
+            <th>image</th>
+            <th>price</th>
+            <th>publisher</th>
+            <th>active</th>
+            <th>content</th>
+            <th>Action</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.title}}</td>
+            <td>{{book.category}}</td>
+            <td>{{book.image}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.active}}</td>
+            <td>{{book.content}}</td>
+            <td><button (click)="editBook(book.id)">Edit</button>
+                <button (click)="deleteBook(book.id)" style="margin: left 10px ;">Delete</button>
+            </td>
+
+
+        </tr>
+    </tbody>
+
+</table> -->
+
+
+<div class="row gy-2 my-2">
+    <div class="col-sm-2" *ngFor="let book of books">
+        <div class="card">
+            <img [src]="book.image" width="50" height="160" class="card-img-top" alt="image">
+            <div class="card-bodys">
+                <p class="card-text">
+                    <label> Title: </label>
+                    {{book.title}}
+                </p>
+                <p class="card-text">
+                    <label> Price: </label>
+                    {{book.price | currency:'INR'}}
+                </p>
+                <p class="card-text">
+                    <label> Publisher: </label>
+                    {{book.publisher}}
+                </p>
+                <p class="card-text">
+                    <label> Category: </label>
+                    {{book.category}}
+                </p>
+                <p class="card-text">
+                    <label> Active: </label>
+                    {{book.active}}
+                </p>
+                <p class="card-text">
+                    <label> Content: </label>
+                    {{book.content}}
+                </p>
+                <button type="button" class="btn btn-warning" (click)="editBook(book.id)">Edit</button>
+                <button type="submit" class="btn btn-danger" (click)="deleteBook(book.id)" style="margin: left 50px ;">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
