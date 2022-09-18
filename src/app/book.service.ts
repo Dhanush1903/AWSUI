@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-const URL="http://54.245.141.223:8083/book"
-const URLGET="http://54.245.141.223:8083/allBooks"
+const URL="http://54.203.219.89:8083/book"
+const URLGET="http://54.203.219.89:8083/allBooks"
 
-const URLLOGIN="http://54.245.141.223:8088/login" 
-//http://ec2-54-202-237-170.us-west-2.compute.amazonaws.com:8088/login
+const URLLOGIN="http://54.203.219.89:8088/login" 
 
 
 @Injectable({
@@ -20,7 +19,7 @@ export class BookService {
   }
 
   searchBooks(authorName:any,publisher:any,category:any,price:any){
-    return this.http.get("	http://54.245.141.223:8083/searchBy/"+authorName+'/'+publisher+'/'+category+'/'+price);
+    return this.http.get("https://u8bdum0loh.execute-api.us-west-2.amazonaws.com/Deploy-BookStore/%7Bproxy+%7D"+authorName+'/'+publisher+'/'+category+'/'+price);
   }
  
  createBook(books:{   title:string;
@@ -47,7 +46,7 @@ export class BookService {
     id:number;
   }){
 
-    return this.http.post(`http://54.245.141.223:8085/buy/${id}`, readers)
+    return this.http.post(`http://54.203.219.89:8085/buy/${id}`, readers)
   }
 
   authorlogin(author:{ 
@@ -61,11 +60,11 @@ export class BookService {
     }
 
     retrieveAllByEmail(email:string){
-      return this.http.get(`http://54.245.141.223:8083/getbookbyemail/${email}`)
+      return this.http.get(`http://54.203.219.89:8083/getbookbyemail/${email}`)
 
     }
     getReadersBook(id:number){
-      return this.http.get(`http://54.245.141.223:8085/getspecificbook/${id}`)
+      return this.http.get(`http://54.203.219.89:8085/getspecificbook/${id}`)
 
     }
 
@@ -82,13 +81,13 @@ updateBook(id:number, books:{   title:string;
   
 
   }){
-  return this.http.put(`http://54.245.141.223:8083/update/${id}`,books)
+  return this.http.put(`http://54.203.219.89:8083/update/${id}`,books)
 
 
 }
 
 deleteBook(id:number){
-  return this.http.delete(`http://54.245.141.223:8083/book/${id}`);
+  return this.http.delete(`http://54.203.219.89:8083/book/${id}`);
 }
 
 createAuthor( authors:{  
@@ -99,7 +98,7 @@ createAuthor( authors:{
  
 
   }      )      {
-    return this.http.post("http://54.245.141.223:8088/author", authors)
+    return this.http.post("http://54.203.219.89:8088/author", authors)
 
 }
 
